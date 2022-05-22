@@ -1,6 +1,6 @@
 {
   "name": "fragments-ui",
-  "private" : true,
+  "private": true,
   "version": "0.0.1",
   "description": "ccp555 - fragments ui testing web app",
   "scripts": {
@@ -12,4 +12,7 @@
   },
   "author": "Jeffrey Huynh <jhuynh34@myseneca.ca>",
   "license": "UNLICENSED",
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
 }
