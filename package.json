@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "description": "ccp555 - fragments ui testing web app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,9 @@
   "author": "Jeffrey Huynh <jhuynh34@myseneca.ca>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "parcel": "^2.5.0"
+    "parcel": "^2.5.0",
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1"
   },
   "dependencies": {
     "aws-amplify": "^4.3.22"
