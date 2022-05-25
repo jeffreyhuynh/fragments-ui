@@ -22,7 +22,7 @@ async function init() {
         return;
     }
 
-    getUserFragments(user);
+    await getUserFragments(user);
 
     console.log ({ user });
     userSection.hidden = false;
