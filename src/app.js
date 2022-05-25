@@ -1,5 +1,6 @@
 // src/app.js
 
+import { getUserFragments } from './api';
 import { Auth, getUser } from './auth';
 
 async function init() {
@@ -20,6 +21,8 @@ async function init() {
         logoutBtn.disabled = true;
         return;
     }
+
+    getUserFragments(user);
 
     console.log ({ user });
     userSection.hidden = false;
