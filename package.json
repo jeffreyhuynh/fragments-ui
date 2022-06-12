@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "description": "ccp555 - fragments ui testing web app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel index.html"
+    "start": "npx parcel index.html",
+    "lint": "eslint --config .eslintrc.js src/** tests/**"
   },
   "repository": {
     "type": "git",
@@ -14,7 +14,9 @@
   "author": "Jeffrey Huynh <jhuynh34@myseneca.ca>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "eslint": "^8.17.0",
     "parcel": "^2.5.0",
+    "prettier": "2.6.2",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1"
   },
