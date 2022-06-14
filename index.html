@@ -5,15 +5,54 @@
   <head>
     <meta charset="utf-8" />
     <title>fragments ui</title>
+    <link rel="stylesheet" href="https://unpkg.com/bamboo.css/dist/dark.min.css" />
     <script type="module" src="src/app.js"></script>
   </head>
   <body>
-    <h1>User Account</h1>
-    <button id="login">Login</button>
-    <button id="logout">Logout</button>
-    <br />
+    <h1>fragments ui</h1>
+    <section hidden id="welcome">
+      <p>Welcome back, <span class="username"></span>.</p>
+    </section>
+    <hr />
+    <h2>Account Controls</h2>
+    <p>
+      <button id="login">Login</button>
+      <button id="logout">Logout</button>
+    </p>
+    <hr />
+    <h2>The actual fragments part</h2>
     <section hidden id="user">
-      <p>Welcome back, <span class="username"></span></p>
+      <div>
+        <h3>upload text fragment</h3>
+        <p>
+          <label for="postText">Fragment Data</label>
+          <input type="text" id="postText" placeholder="put content here" />
+        </p>
+        <p>
+          <button id="post">POST</button>
+        </p>
+        <p>
+          <p>POST Response</p>
+          <pre id="postResponse"></pre>
+        </p>
+        <p>
+          <label for="responseLink">Response Location</label>
+          <input id="responseLink" type="text" readonly placeholder="generated after POST request is made">
+        </p>
+        <h3>get text fragment</h3>
+        <p>
+          <label for="getText">Fragment ID</label>
+          <input type="text" id="getText" placeholder="accepts fragment id or link" />
+        </p>
+        <p>
+          <button id="get">GET</button>
+          <button id="getLink">GET from POST Response Location</button>
+        </p>
+        <p>
+          <label for="getResponse">GET Response</label>
+          <input id="getResponse" type="text" readonly>
+        </p>
+      </div>
     </section>
   </body>
 </html>
