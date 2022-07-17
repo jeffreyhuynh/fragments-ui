@@ -23,8 +23,25 @@
     <h2>The actual fragments part</h2>
     <section hidden id="user">
       <div>
+        <h3>current fragments</h3>
+        <p>
+          <button id="getFragments">get fragments</button>
+          <button id="getExpanded">get expanded fragments</button>
+          <pre id="currentFragments"></pre>
+        </p>
         <h3>upload text fragment</h3>
         <p>
+          <label for="fragmentType">Fragment Type</label>
+          <select name="fragmentType" id="fragmentType">
+          <optgroup label="Text">
+            <option value="text/plain">text/plain</option>
+            <option value="text/html">text/html</option>
+            <option value="text/markdown">text/markdown</option>
+          </optgroup>
+          <optgroup label="JSON">
+            <option value="application/json">application/json</option>
+          </optgroup>
+          </select>
           <label for="postText">Fragment Data</label>
           <input type="text" id="postText" placeholder="put content here" />
         </p>

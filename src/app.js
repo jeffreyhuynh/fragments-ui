@@ -23,21 +23,57 @@ async function init() {
     logoutBtn.disabled = true;
     return;
   }
-  await getUserFragments(user);
+  let fragmentData = await getUserFragments(user);
 
   console.log({ user });
   userSection.hidden = false;
   welcomeSection.hidden = false;
   welcomeSection.querySelector('.username').innerText = user.username;
+  document.getElementById('currentFragments').innerText = JSON.stringify(fragmentData, null, 4);
   loginBtn.disabled = true;
+
+  document.getElementById('getFragments').addEventListener('click', () => {
+    const url = apiUrl + '/v1/fragments';
+    fetch(url, {
+      method: 'GET',
+      headers: user.authorizationHeaders(),
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log('GET ' + url + ': response: ' + data);
+        document.getElementById('currentFragments').innerText = JSON.stringify(
+          JSON.parse(data),
+          null,
+          4
+        );
+      });
+  });
+
+  document.getElementById('getExpanded').addEventListener('click', () => {
+    const url = apiUrl + '/v1/fragments?expand=1';
+    fetch(url, {
+      method: 'GET',
+      headers: user.authorizationHeaders(),
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log('GET ' + url + ': response: ' + data);
+        document.getElementById('currentFragments').innerText = JSON.stringify(
+          JSON.parse(data),
+          null,
+          4
+        );
+      });
+  });
 
   // consider adding error handling to support 415/invalid type
   document.getElementById('post').addEventListener('click', () => {
     const data = document.getElementById('postText').value;
+    const fragmentType = document.getElementById('fragmentType').value;
     const url = apiUrl + '/v1/fragments/';
     fetch(url, {
       method: 'POST',
-      headers: user.authorizationHeaders('text/plain'),
+      headers: user.authorizationHeaders(fragmentType),
       body: data,
     })
       .then((res) => res.json())
