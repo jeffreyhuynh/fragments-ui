@@ -1,0 +1,12 @@
+.git/
+.github/
+.parcel-cache/
+.vscode/
+dist/
+node_modules/
+Dockerfile
+.dockerignore
+.eslintrc.js
+.gitignore
+.prettier*
+README.md

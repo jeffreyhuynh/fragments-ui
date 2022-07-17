@@ -15,12 +15,12 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "eslint": "^8.17.0",
-    "parcel": "^2.5.0",
-    "prettier": "2.6.2",
-    "process": "^0.11.10",
-    "querystring-es3": "^0.2.1"
+    "prettier": "2.6.2"
   },
   "dependencies": {
-    "aws-amplify": "^4.3.22"
+    "aws-amplify": "^4.3.22",
+    "parcel": "^2.5.0",
+    "querystring-es3": "^0.2.1",
+    "process": "^0.11.10"
   }
 }
